@@ -9,10 +9,11 @@ class Item extends Component {
 	}
 
 	_handleClick = (itemId) => {
-		this.props.addToCart(this.props.item.id);
+		this.props.addCart(this.props.item.id);
 	}
 
 	render() {
+		console.log(this.props.params);
 		const { item } = this.props;
 		return (
 			<div className="watches">
@@ -23,12 +24,11 @@ class Item extends Component {
 					<img className="item-num3" src={item.images[2].small} />
 				</div>
 				<h2 className="description">{item.description}</h2>
-				<div className="cost">
+				<div className="cost">$ {item.price}</div>
 					<button className="price"
-						value={item.id}
+						value={item.price}
 						onClick={this._handleClick}>BUY ME</button>
 				</div>
-			</div>
 		);
 	}
 }

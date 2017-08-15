@@ -16,16 +16,18 @@ class App extends React.Component {
 		items: PRODUCTS,
 		cart: [],
 		cartTotal: 0,
+		error: null,
 	};
 
 	_getItem = (itemId) => {
-		return this.state.items.reduce((prev, item) => {
-			return item.id === itemId ? item : prev;
+		return this.state.items.find(item => {
+			return item.id == itemId
 		});
 	}
 
-	addToCart = (itemId) => {
-		const { cart, items } = this.state;
+	_addCart = (itemId) => {
+		console.log('ITEMID>>>>>>>>',itemId)
+		const { items, cart } = this.state;
 		this.setState({
 			cart: [
 				...cart,
@@ -33,35 +35,32 @@ class App extends React.Component {
 			],
 			cartTotal: cart.length+1,
 		});
-	};
 
+	}
 
 	render() {
 		const { items, cart, cartTotal } = this.state;
 		return (
 			<BrowserRouter>
-
 				<div className="navbar">
-
-					<Navigation totalCart={this.state.cartTotal}/>
+					<Navigation />
 					<Switch>
 						<Route exact path = "/" component={Home} />
-						<Route exact path = "/List" render= {(props) => {
+						<Route exact path = "/List" render={(props)=> {
 							return (
 								<List items ={items}
 								/>
 							);
-						}}/>
-
+						}} />
 						<Route exact path = "/item/:itemId" render={(props) => {
 							return (
 								<Item
 									item = {this._getItem(props.match.params.itemId)}
-									addToCart = {this._addToCart}
+									addCart = {this._addCart}
 								/>
 							);
 						}}/>
-
+						<Route exact path = "/Success" component={Success} />
 						<Route exact path = "/Cart"
 							render = {(props) => {
 								return (
@@ -69,9 +68,7 @@ class App extends React.Component {
 								);
 							}}
 						/>
-
 						<Route exact path = "/Checkout" component={Checkout} />
-						<Route exact path = "/Success" component={Success} />
 						<Route exact path= "*" component={FourOhFour} />
 					</Switch>
 				</div>

@@ -6,7 +6,6 @@ class Cart extends Component {
 		super(props);
 		this.state = {
 			items: {},
-			cart: [],
 		};
 	}
 
@@ -17,10 +16,23 @@ class Cart extends Component {
 
 
 	render() {
+		const { cart } = this.props;
+		let sum = 0;
 		return (
-			<div>
-				<h1>This is your Cart!</h1>
-			</div>
+			<div className="cart-items">
+			<h1>Shopping Cart</h1>
+			{cart.map((item)=> {
+				sum = sum + parseInt(item.price);
+				return (
+					<ul>
+					<img className="cart-img" src={item.images[0].small}/>
+					{item.name}
+					{item.price}
+					</ul>
+				);
+			})}
+			Quantity: total: ${sum}
+		</div>
 		);
 	}
 }

@@ -10,13 +10,15 @@ class List extends Component {
 			<div className="Items">
 				<h1>Watch This</h1>
 				<ul className="Item-List">
-					{PRODUCTS.map((product, index) =>{
+					{PRODUCTS.map((item, index) => {
 						return (
 							<li className="Watch-type">
-								<Link to= {`/item/${index}`}>
-									<li key={product.name}></li>
-									<li><img className="Watch-img"
-													src={product.images[0].small}
+								<Link key={item.id}
+									to= {`/item/${item.id}`}>
+										<li key={item.name}></li>
+									<li>
+												<img className="Watch-img"
+													src={item.images[0].small}
 												/>
 									</li>
 								</Link>
