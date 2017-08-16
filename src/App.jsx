@@ -5,6 +5,7 @@ import PRODUCTS from "json/products.json";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import Navigation from "components/Navigation";
+import reducers from "./reducers";
 import Home from "pages/Home";
 import List from "pages/List";
 import Item from "pages/Item";
@@ -23,12 +24,11 @@ class App extends React.Component {
 
 	_getItem = (itemId) => {
 		return this.state.items.find(item => {
-			return item.id == itemId
+			return item.id === itemId;
 		});
 	}
 
 	_addCart = (itemId) => {
-		console.log('ITEMID>>>>>>>>',itemId)
 		const { items, cart } = this.state;
 		this.setState({
 			cart: [
