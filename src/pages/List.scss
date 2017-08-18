@@ -1,13 +1,19 @@
-h1 {
+h1, h3 {
 	text-align: center;
+}
+
+h1 {
 	font-size: 35px;
 	font-family: 'Lobster', sans-serif;
 }
 
-.Watch-type {
+
+.Item-List {
 	border: 1px solid #C8D3D5;
 	width: auto;
 	height: auto;
 	display: inline-block;
 	flex-wrap: wrap;
+	padding-top: 3px;
+	padding-bottom: 3px;
 }
