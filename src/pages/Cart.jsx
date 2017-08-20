@@ -16,23 +16,24 @@ class Cart extends Component {
 
 
 	render() {
-		const { cart } = this.props;
+		const { cart, cartTotal } = this.props;
 		let sum = 0;
 		return (
 			<div className="cart-items">
-			<h1>Shopping Cart</h1>
-			{cart.map((item)=> {
-				sum = sum + parseInt(item.price);
-				return (
-					<ul>
-					<img className="cart-img" src={item.images[0].small}/>
-					{item.name}
-					{item.price}
-					</ul>
-				);
-			})}
-			Quantity: total: ${sum}
-		</div>
+				<h1>Shopping Cart</h1>
+				{cart.map((item)=> {
+					sum = sum + parseInt(item.price);
+					return (
+						<ul>
+							<img className="cart-img" src={item.images[0].small}/>
+							{item.name}
+							{item.price}
+						</ul>
+					);
+				})}
+			<p>Quantity: {cartTotal}</p>
+			<p>total: ${sum}</p>
+			</div>
 		);
 	}
 }

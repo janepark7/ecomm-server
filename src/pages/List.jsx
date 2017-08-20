@@ -2,6 +2,7 @@ import "./List.scss";
 import React, { Component } from "react";
 import PRODUCTS from "json/products.json";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 class List extends Component {
 
