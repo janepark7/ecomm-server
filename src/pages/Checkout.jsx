@@ -14,7 +14,7 @@ class Checkout extends Component {
 		};
 	}
 	render() {
-		const { totalCart } = this.props;
+		const { cartTotal } = this.props;
 		return (
 			<div className="cust-form">
 				<form action="/Success" method="post">

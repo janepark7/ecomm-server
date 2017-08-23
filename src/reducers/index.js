@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
-import List from "./list";
+import item from "./item";
+import list from "./list";
+import cart from "./cart";
+import checkout from "./checkout";
 
-export default combineReducers({
-	List,
-});
+export default combineReducers({ item, list, cart, checkout });

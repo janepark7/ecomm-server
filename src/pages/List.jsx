@@ -2,11 +2,16 @@ import "./List.scss";
 import React, { Component } from "react";
 import PRODUCTS from "json/products.json";
 import { Link } from "react-router-dom";
+import { getAll } from "actions/items";
 import { connect } from "react-redux";
 
 class List extends Component {
+	componentDidMount() {
+		this.props.getAll();
+	}
 
 	render() {
+		const { items } = this.props;
 		return (
 			<div className="Items">
 				<h1>Watch This</h1>
@@ -31,4 +36,9 @@ class List extends Component {
 		);
 	}
 }
-export default List;
+function mapStateToProps(state, props) {
+	return {
+		items: state.products,
+	};
+}
+export default connect(mapStateToProps, { getAll }) (List);

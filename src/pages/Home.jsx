@@ -10,7 +10,7 @@ class Home extends Component {
 
 				<h1>WATCH THIS</h1>
 
-				Welcome to WATCH THIS. This site will fulfill all of your stylish watch needs!
+				Welcome to <b>WATCH THIS</b>. This site will fulfill all of your stylish watch needs!
 				A wide range from mens, womens, and of course we didn't forget the kids. Now it's time
 				to get shopping needs done!
 			</div>
