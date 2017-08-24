@@ -1,5 +1,7 @@
 import "./Cart.scss";
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 class Cart extends Component {
 	constructor(props) {
@@ -14,9 +16,9 @@ class Cart extends Component {
 		console.log(cart);
 	}
 
-
 	render() {
 		const { cart, cartTotal } = this.props;
+
 		let sum = 0;
 		return (
 			<div className="cart-items">
@@ -33,9 +35,24 @@ class Cart extends Component {
 				})}
 			<p>Quantity: {cartTotal}</p>
 			<p>total: ${sum}</p>
+
+				<Link to="/Checkout">
+					<button className="checkout">PROCEED TO CHECKOUT</button>
+				</Link>
 			</div>
 		);
 	}
 }
 
-export default Cart;
+Cart.propTypes = {
+
+};
+
+function mapStateToProps(state, props) {
+    return {
+        cart: state.cart.cart,
+        cartIds: state.cart.cartId,
+    };
+}
+
+export default connect(mapStateToProps, {  })(Cart);

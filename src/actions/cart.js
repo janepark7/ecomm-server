@@ -1,11 +1,18 @@
-export function addTodo(text) {
-  return { type: "ADD_TODO", text }
-}
+export function addCart(item) {
+  return (dispatch) =>{
 
-export function toggleTodo(index) {
-  return { type: "TOGGLE_TODO", index }
-}
-
-export function setVisibilityFilter(filter) {
-  return { type: "SET_VISIBILITY_FILTER", filter }
+		if (item) {
+			console.log(item);
+			dispatch({
+				type: "ADD_TO_CART",
+				item,
+			});
+		}
+		else {
+			dispatch({
+				type: "NOT_AN_ITEM",
+				error: "Cannot add to cart",
+			});
+		}
+	};
 }

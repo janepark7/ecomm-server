@@ -17,6 +17,7 @@ class Checkout extends Component {
 		const { cartTotal } = this.props;
 		return (
 			<div className="cust-form">
+				<h1>Checkout Time</h1>
 				<form action="/Success" method="post">
 					<p>
 						<label className="cust-name">
