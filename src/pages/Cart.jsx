@@ -2,6 +2,7 @@ import "./Cart.scss";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import cart from "reducers/cart.js";
 
 class Cart extends Component {
 	constructor(props) {
@@ -11,7 +12,7 @@ class Cart extends Component {
 		};
 	}
 
-	addToCart(){
+	addCart(){
 	 	const cart = [...this.state.cart];
 		console.log(cart);
 	}

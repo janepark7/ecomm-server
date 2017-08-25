@@ -3,7 +3,7 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import PRODUCTS from "json/products.json";
 import { createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
+import reduxThunk from "redux-thunk";
 import { Provider } from "react-redux";
 import Navigation from "components/Navigation";
 import reducers from "./reducers";
@@ -15,7 +15,7 @@ import Checkout from "pages/Checkout";
 import Success from "pages/Success";
 import FourOhFour from "pages/404";
 
-const store = createStore(reducers, applyMiddleware(thunk));
+const store = createStore(reducers, applyMiddleware(reduxThunk));
 
 class App extends React.Component {
 	// state = {

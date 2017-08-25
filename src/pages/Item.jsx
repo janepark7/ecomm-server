@@ -11,14 +11,14 @@ class Item extends Component {
 		super(props);
 		console.log(props.match.params.itemId);
 		const item = PRODUCTS.find(watch => watch.id === this.props.match.params.itemId);
-		this.state = {item}
+		this.state = {item};
 	}
 	componentDidMount() {
 		this.props.getOne(this.props.itemId);
 	}
 
 	_handleClick = () => {
-		alert("OGGA BOOGA")
+		alert("LETS ADD SOME WATCHES");
 		this.props.addCart(this.state.item);
 		// console.log(this._handleClick.bind(this));
 	}

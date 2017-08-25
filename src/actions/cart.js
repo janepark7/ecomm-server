@@ -1,11 +1,15 @@
-export function addCart(item) {
-  return (dispatch) =>{
+
+export function addCart(item, cartTotal) {
+  return (dispatch) => {
 
 		if (item) {
 			console.log(item);
 			dispatch({
 				type: "ADD_TO_CART",
 				item,
+
+				type: "TOTAL_CART",
+				cartTotal,
 			});
 		}
 		else {

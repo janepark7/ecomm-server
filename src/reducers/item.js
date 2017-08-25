@@ -8,14 +8,14 @@ export default function(state = INITIAL_STATE, action) {
 	switch (action.type) {
 
 	// Get All Items
-	case "GET_ALL_PRODUCTS":
+	case "GET_ALL_ITEMS":
 		return {
 			...state,
 			items: action.item,
 		};
 
 	// Get One Product
-	case "GET_ONE_PRODUCT":
+	case "GET_ONE_ITEM":
 		return {
 			...state,
 			activeItem: action.item,
