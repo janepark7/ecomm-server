@@ -1,10 +1,9 @@
 import "./App.scss";
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import PRODUCTS from "json/products.json";
 import { createStore, applyMiddleware } from "redux";
-import reduxThunk from "redux-thunk";
 import { Provider } from "react-redux";
+import reduxThunk from "redux-thunk";
 import Navigation from "components/Navigation";
 import reducers from "./reducers";
 import Home from "pages/Home";

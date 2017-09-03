@@ -1,10 +1,11 @@
 import "./Navigation.scss";
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 class Navigation extends Component {
 	render() {
-		const { cartTotal } = this.props;
+		const { addCart } = this.props;
 		const links = [{
 			to: "/",
 			text: "Home",
@@ -13,14 +14,14 @@ class Navigation extends Component {
 			text: "List",
 		}, {
 			to: "/Cart",
-			text: "Cart",
+			text: 'Cart ${addCart}',
 		}];
 
 		return (
 			<nav className="Nav">
 				{links.map((link) => {
 					return (
-						<NavLink
+						<Link
 							key={link.to}
 							to={link.to}
 							className="Nav-link"
@@ -28,13 +29,16 @@ class Navigation extends Component {
 							exact
 						>
 							{link.text}
-						</NavLink>
+						</Link>
 					);
 				})}
-				<span className = "cartTotal">{ cartTotal }</span>
 			</nav>
 		);
 	}
 }
-
-export default Navigation;
+function mapStateToProps(state, props) {
+	return {
+		addedProducts: state.cart.addCart,
+	};
+}
+export default connect(mapStateToProps) (Navigation);

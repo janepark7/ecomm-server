@@ -1,6 +1,5 @@
 import "./Item.scss";
 import React, { Component } from "react";
-import PRODUCTS from "json/products.json";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getOne } from "actions/items";
@@ -10,7 +9,7 @@ class Item extends Component {
 	constructor(props) {
 		super(props);
 		console.log(props.match.params.itemId);
-		const item = PRODUCTS.find(watch => watch.id === this.props.match.params.itemId);
+		const item = item.find(watch => watch.id === this.props.match.params.itemId);
 		this.state = {item};
 	}
 	componentDidMount() {

@@ -38,11 +38,13 @@ export default {
 			headers,
 			body,
 			credentials: "include",
-		}).then((res) => {
-			return res.json();
-		}).catch((err) => {
-			console.error("Uncaught error:", err);
-		});
+		})
+			.then((res) => {
+				return res.json();
+			})
+			.catch((err) => {
+				console.error("Uncaught error:", err);
+			});
 	},
 
 	/**

@@ -1,29 +1,47 @@
 import API from "util/api";
 
-export function submit(user, cart) {
+export function submitOrder(order, cartTotal) {
 
-	return (dispatch) => {
+	return (dispatch, getStore) => {
+		const { cart } = getStore().cart;
+		const itemIds = cart.map(function(item){
+			return item.id;
+		});
 		dispatch({
-			type: "PENDING_ORDER",
+			type: "SUBMIT_ORDER_START",
 		});
-		console.log("actions/checkout; submit(user, cart)", user, cart);
+		console.log("submitOrder(order, cart)", order.zip, itemIds);
 		API.post("/orders", {
-			type: {
-
+			args: {
+				firstname: order.firstname,
+				lastname: order.lastname,
+				address: order.address,
+				city: order.city,
+				state: order.state,
+				zipcode: order.zipcode,
+				items: itemIds,
 			},
-		});
-	};
-}
-export function success() {
-
-	return {
-		type: "",
-	};
-}
-export function validate() {
-
-	return {
-		type: "",
-
+		})
+			.then((res) => {
+				if (res.data) {
+					dispatch({
+						type: "SUBMIT_ORDER_SUCCESS",
+						data: res.data,
+						order,
+					});
+				}
+				else {
+					dispatch({
+						type: "SUBMIT_ORDER_FAILURE",
+						error: res.error.message,
+					});
+				}
+			})
+			.catch((error) => {
+				dispatch({
+					type: "SUBMIT_ORDER_FAILURE",
+					error: "Something went wrong, refresh the page!",
+				});
+			});
 	};
 }
