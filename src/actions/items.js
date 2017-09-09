@@ -29,33 +29,30 @@ export function getAll() {
 	};
 }
 
-export function getOne(itemId) {
+export function getOne(productId) {
 	return (dispatch) => {
-		dispatch({ type: "ITEMS_LOADING"});
-
-		API.get(`/products/${itemId}`, {
-			args: {
-				item: itemId,
-			},
-		}).then((res) => {
+		dispatch({ type: "ITEM_LOADING" });
+		API.get(`/products/${productId}`).then((res) => {
 			if (res.data) {
-				console.log("actions/item; getOne(),  res.data.product: ",res.data.product);
 				dispatch({
 					type: "ITEM_GET_ONE",
-					activeItem: res.data.product,
-				});
-			} else {
-				console.log(res.error);
-				dispatch({
-					type: "ITEM_ERROR",
-					error: res.error,
+				 	item: res.data.product,
+					itemId: res.data.product.id,
 				});
 			}
-		}).catch((error) => {
-			dispatch({
-				type: "ITEMS_ERROR",
-				error: "Something went wrong, please refresh page",
+			else {
+				dispatch({
+					type: "ITEM_ERROR",
+					error: "Can not find that product!",
+				});
+			}
+		})
+
+			.catch((err) => {
+				dispatch({
+					type: "ITEM_ERROR",
+					error: "Something went wrong. Refresh",
+				});
 			});
-		});
 	};
 }
