@@ -1,4 +1,4 @@
-import PRODUCTS from "json/products.json";
+// import PRODUCTS from "json/products.json";
 
 const INITIAL_STATE = {
 	cart: [],
@@ -28,7 +28,7 @@ function cartReducer(state = INITIAL_STATE, action) {
 			cart: [],
 			cartTotal: 0,
 		};
-		
+
 	default:
 		return state;
 	}

@@ -64,6 +64,8 @@ class Cart extends Component {
 		}
 	}
 }
+
+
 // 		let sum = 0;
 // 		if (cartTotal > 0) {
 // 			return (
