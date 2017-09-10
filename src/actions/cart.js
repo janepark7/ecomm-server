@@ -1,8 +1,10 @@
+// import API from "util/api.js";
+
 export function addCart(item) {
   return (dispatch) => {
     if (item) {
       dispatch ({
-        type: "ADD_ITEM",
+        type: "ADD_CART",
         item,
         itemId: item.id,
     });

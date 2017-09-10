@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 
 class Navigation extends Component {
 	render() {
-		const { addCart } = this.props;
+		const { cartTotal } = this.props;
 		const links = [{
 			to: "/",
 			text: "Home",
@@ -14,7 +14,7 @@ class Navigation extends Component {
 			text: "List",
 		}, {
 			to: "/Cart",
-			text: 'Cart ${addCart}',
+			text: "Cart",
 		}];
 
 		return (
@@ -32,13 +32,14 @@ class Navigation extends Component {
 						</Link>
 					);
 				})}
+				<span className = "cartTotal">{ cartTotal }</span>
 			</nav>
 		);
 	}
 }
 function mapStateToProps(state, props) {
 	return {
-		addedProducts: state.cart.addCart,
+		addCart: state.cart.addCart,
 	};
 }
 export default connect(mapStateToProps) (Navigation);
