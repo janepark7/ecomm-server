@@ -20,9 +20,9 @@ class Cart extends Component {
 	// }
 
 	render() {
-		const { cart, addCart } = this.props;
+		const { cart, cartTotal } = this.props;
 
-		const cartTotal = cart.reduce(function(prev, item){
+		const totalCost = cart.reduce(function(prev, item){
 			return prev + parseFloat(item.price);
 		},0);
 
@@ -39,8 +39,8 @@ class Cart extends Component {
 						);
 					})}
 					<div className="cart-info">
-						<p className="cart-total-item">Total Items: {addCart}</p>
-						<p className="cart-total-price">Total Price: ${cartTotal}</p>
+						<p className="cart-total-item">Total Items: { cartTotal }</p>
+						<p className="cart-total-price">Total Price: ${ totalCost }</p>
 					</div>
 					<Link to="/Checkout">
 						<button className="checkout-button">Check Items Out</button>
@@ -104,8 +104,8 @@ class Cart extends Component {
 
 function mapStateToProps(state, props) {
 	return {
+		cartTotal: state.cart.cartTotal,
 		cart: state.cart.cart,
-		cartIds: state.cart.cartId,
 	};
 }
 

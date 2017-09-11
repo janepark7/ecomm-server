@@ -55,7 +55,6 @@ class App extends React.Component {
 							<Route exact path = "/Success" component={Success} />
 							<Route exact path = "/Cart" component={Cart}/>
 							<Route exact path = "/Checkout" component={Checkout} />
-							<Route exact path = "/Success" component={Success}/>
 							<Route exact path= "*" component={FourOhFour} />
 						</Switch>
 					</div>

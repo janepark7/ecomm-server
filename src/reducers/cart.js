@@ -5,7 +5,7 @@ const INITIAL_STATE = {
 	cartTotal: 0,
 };
 
-function cartReducer(state = INITIAL_STATE, action) {
+export default function cartReducer(state = INITIAL_STATE, action) {
 	switch (action.type) {
 	case "ADD_CART":
 		return {
@@ -19,7 +19,7 @@ function cartReducer(state = INITIAL_STATE, action) {
 	case "NOT_AN_ITEM":
 		return {
 			...state,
-			error: action. error,
+			error: action.error,
 		};
 
 	case "SUBMIT_ORDER_SUCCESS":
@@ -33,5 +33,3 @@ function cartReducer(state = INITIAL_STATE, action) {
 		return state;
 	}
 }
-
-export default cartReducer;

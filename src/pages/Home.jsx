@@ -6,6 +6,7 @@ import PRODUCTS from "json/products.json";
 class Home extends Component {
 	render() {
 		return (
+			<div className="watch-body">
 			<div className="intro">
 
 				<h1>WATCH THIS</h1>
@@ -14,6 +15,7 @@ class Home extends Component {
 				A wide range from mens, womens, and of course we didn't forget the kids. Now it's time
 				to get shopping needs done!
 			</div>
+		</div>
 		);
 	}
 }

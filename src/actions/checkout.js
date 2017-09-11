@@ -1,6 +1,6 @@
 import API from "util/api";
 
-export function submitOrder(order, cartTotal) {
+export function submitOrder(order) {
 
 	return (dispatch, getStore) => {
 		const { cart } = getStore().cart;

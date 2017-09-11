@@ -38,7 +38,7 @@ class CheckoutForm extends Component {
 
 		if (orderSuccess) {
 			message = (<div className="OrderSuccess">
-				<Link to= "/list">
+				<Link to= "/List">
 				 <p>
 					Your Order Was Successfully Placed! Continue Shopping.
 					</p>
@@ -90,42 +90,6 @@ class CheckoutForm extends Component {
 	}
 }
 
-CheckoutForm.propTypes = {
-	error: PropTypes.string,
-	orderSuccess: PropTypes.bool,
-	orderFailure: PropTypes.bool,
-	cart: PropTypes.arrayOf(PropTypes.shape({
-		product: PropTypes.shape({
-			id: PropTypes.number,
-			name: PropTypes.string,
-			category: PropTypes.string,
-			description: PropTypes.string,
-			rating: PropTypes.number,
-			price: PropTypes.string,
-		}),
-	})),
-	images: PropTypes.arrayOf(PropTypes.shape({
-		0: PropTypes.shape({
-			original: PropTypes.string,
-			small: PropTypes.string,
-			medium: PropTypes.string,
-			large: PropTypes.string,
-		}),
-		1: PropTypes.shape({
-			original: PropTypes.string,
-			small: PropTypes.string,
-			medium: PropTypes.string,
-			large: PropTypes.string,
-		}),
-		2: PropTypes.shape({
-			original: PropTypes.string,
-			small: PropTypes.string,
-			medium: PropTypes.string,
-			large: PropTypes.string,
-		}),
-	})),
-	cartTotal: PropTypes.number,
-};
 
 function mapStateToProps(state, props) {
 	return {

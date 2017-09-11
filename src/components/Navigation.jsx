@@ -39,7 +39,7 @@ class Navigation extends Component {
 }
 function mapStateToProps(state, props) {
 	return {
-		addCart: state.cart.addCart,
+		cartTotal: state.cart.cartTotal,
 	};
 }
 export default connect(mapStateToProps) (Navigation);
