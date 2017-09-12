@@ -5,7 +5,7 @@ const INITIAL_STATE = {
 	error: null,
 };
 
-export default function checkoutReduced(state= INITIAL_STATE, action) {
+function checkoutReduced(state= INITIAL_STATE, action) {
 	switch(action.type) {
 		case "SUBMIT_ORDER_SUCCESS":
 		return {
@@ -14,6 +14,8 @@ export default function checkoutReduced(state= INITIAL_STATE, action) {
 			orderSuccess: true,
 			orderFailure: false,
 		};
+
+//	Error cases
 
 		case "SUBMIT_ORDER_FAILURE":
 		return {
@@ -26,3 +28,5 @@ export default function checkoutReduced(state= INITIAL_STATE, action) {
 			return state;
 	}
 }
+
+export default checkoutReduced;

@@ -17,32 +17,8 @@ import FourOhFour from "pages/404";
 const store = createStore(reducers, applyMiddleware(reduxThunk));
 
 class App extends React.Component {
-	// state = {
-	// 	items: PRODUCTS,
-	// 	cart: [],
-	// 	cartTotal: 0,
-	// 	error: null,
-	// };
-	//
-	// _getItem = (itemId) => {
-	// 	return this.state.items.find(item => {
-	// 		return item.id === itemId;
-	// 	});
-	// }
-	//
-	// _addCart = (itemId) => {
-	// 	const { items, cart } = this.state;
-	// 	this.setState({
-	// 		cart: [
-	// 			...cart,
-	// 			this._getItem(itemId),
-	// 		],
-	// 		cartTotal: cart.length + 1,
-	// 	});
-	// }
 
 	render() {
-		// const { items, cart, cartTotal } = this.state;
 		return (
 			<Provider store={store}>
 				<BrowserRouter>

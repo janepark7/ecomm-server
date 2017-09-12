@@ -10,11 +10,10 @@ export function submitOrder(order) {
 		dispatch({
 			type: "SUBMIT_ORDER_START",
 		});
-		console.log("submitOrder(order, cart)", order.zip, itemIds);
+		console.log(itemIds);
 		API.post("/orders", {
 			args: {
-				firstname: order.firstname,
-				lastname: order.lastname,
+				firstname: order.name,
 				address: order.address,
 				city: order.city,
 				state: order.state,

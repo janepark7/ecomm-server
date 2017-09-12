@@ -3,17 +3,16 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { submitOrder } from "actions/checkout";
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
 
 class CheckoutForm extends Component {
 	constructor(props) {
 		super(props); {
 			this.state = {
-				Name: "",
-				Address: "",
-				City: "",
-				State: "",
-				Zipcode: "",
+				name: "",
+				address: "",
+				city: "",
+				state: "",
+				zipcode: "",
 				error: null,
 			};
 		}
@@ -26,12 +25,12 @@ class CheckoutForm extends Component {
 
 	_handleSubmit = (ev) => {
 		ev.preventDefault();
-		const { cart, cartTotal } = this.props;
+		const { cart, allCartItems } = this.props;
 		this.props.submitOrder(this.state);
 	}
 
 	render() {
-		const { Name, Address, ZipCode, City, State, value  } = this.state;
+		const { name, address, zipcode, city, state, value  } = this.state;
 		const { error, orderSuccess, orderFail, cart, cartTotal } = this.props;
 
 		let message;
@@ -40,7 +39,7 @@ class CheckoutForm extends Component {
 			message = (<div className="OrderSuccess">
 				<Link to= "/List">
 				 <p>
-					Your Order Was Successfully Placed! Continue Shopping.
+					Yay! Your order was SUCCESSFULLY placed!
 					</p>
 				</Link>
 			</div>);
@@ -58,23 +57,23 @@ class CheckoutForm extends Component {
 					<form onSubmit={this._handleSubmit}>
 						<div className="cust-name">
 							<label className="name">Name:</label>
-							<input type="text" name="Name" onChange={this._handleChange} required/>
+							<input type="text" name="name" onChange={this._handleChange} required/>
 						</div>
 						<div className="cust-address">
 							<label className="address">Address:</label>
-							<input type="text" name="Address" onChange={this._handleChange} required/>
+							<input type="text" name="address" onChange={this._handleChange} required/>
 						</div>
 						<div className="cust-city">
 							<label className="city">City:</label>
-							<input type="text" name="City" onChange={this._handleChange} required/>
+							<input type="text" name="city" onChange={this._handleChange} required/>
 						</div>
 						<div className="cust-state">
 							<label className="state">State:</label>
-							<input type="text" name="State" onChange={this._handleChange} required/>
+							<input type="text" name="state" onChange={this._handleChange} required/>
 						</div>
 						<div className="cust-zip">
 							<label className="zipcode">Zipcode:</label>
-							<input type="text" name="Zipcode" onChange={this._handleChange} required/>
+							<input type="text" name="zipcode" onChange={this._handleChange} required/>
 						</div>
 						<div className="confirm-order">
 						<button type="submit" onSubmit={this._handleSubmit}>
@@ -97,7 +96,7 @@ function mapStateToProps(state, props) {
 		orderSuccess: state.checkout.orderSuccess,
 		orderFail: state.checkout.orderFail,
 		cart: state.cart.cart,
-		cartTotal: state.cart.cartTotal,
+		allCartItems: state.cart.allCartItems,
 	};
 }
 

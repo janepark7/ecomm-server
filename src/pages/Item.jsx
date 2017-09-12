@@ -6,13 +6,7 @@ import { getOne } from "actions/items";
 import { addCart } from "actions/cart";
 
 class Item extends Component {
-	// constructor(props) {
-	// 	super(props);
-	// 	console.log(props.match.params.itemId);
-	// 	const item = item.find(product => product.id === this.props.match.params.itemId);
-	// 	this.state = {item};
-	// 	console.log(item, "LLLLLLLLLLL");
-	// }
+
 	componentDidMount() {
 		this.props.getOne(this.props.itemId);
 	}
@@ -67,36 +61,3 @@ function mapStateToProps(state, props) {
 }
 
 export default connect(mapStateToProps, { getOne, addCart })(Item);
-		// return (
-		// 	<div className="watches">
-		// 		<h1 className="name">{this.state.item.name}</h1>
-		// 		<div className="item-image">
-		// 			<img className="item-num1" src={item.image.small} />
-		// 			<img className="item-num2" src={item.image.small} />
-		// 			<img className="item-num3" src={item.image.small} />
-		// 		</div>
-		// 		<h2 className="description">{this.state.item.description}</h2>
-		// 		<div className="cost">$ {this.state.item.price}</div>
-		// 		<button className="price"
-		// 			value={this.state.item.price}
-		// 			onClick={this._handleClick.bind(this)}>BUY ME</button>
-		//
-		// 	</div>
-		// );
-// 	}
-// }
-
-// Item.propTypes = {
-//
-// };
-//
-// function mapStateToProps(state, props) {
-//     return {
-//         item: state.item.items,
-//         itemIds: state.item.itemIds,
-//     };
-// }
-
-
-
-// export default connect(mapStateToProps, { getOne, addCart })(Item);
