@@ -12,7 +12,7 @@ class CheckoutForm extends Component {
 				address: "",
 				city: "",
 				state: "",
-				zipcode: "",
+				zipcode: 0,
 				error: null,
 			};
 		}
@@ -37,7 +37,7 @@ class CheckoutForm extends Component {
 
 		if (orderSuccess) {
 			message = (<div className="OrderSuccess">
-				<Link to= "/List">
+				<Link to= "/Success">
 				 <p>
 					Yay! Your order was SUCCESSFULLY placed!
 					</p>
@@ -49,30 +49,29 @@ class CheckoutForm extends Component {
 			message = <div className="OrderFail"> { error } </div>;
 		}
 
-
     	return (
     	<div className="checkout-form">
 				<div className="cust-form">
 					<h1>Checkout Time</h1>
 					<form onSubmit={this._handleSubmit}>
 						<div className="cust-name">
-							<label className="name">Name:</label>
+							<label className="name">Full Name: </label>
 							<input type="text" name="name" onChange={this._handleChange} required/>
 						</div>
 						<div className="cust-address">
-							<label className="address">Address:</label>
+							<label className="address">Address: </label>
 							<input type="text" name="address" onChange={this._handleChange} required/>
 						</div>
 						<div className="cust-city">
-							<label className="city">City:</label>
+							<label className="city">City: </label>
 							<input type="text" name="city" onChange={this._handleChange} required/>
 						</div>
 						<div className="cust-state">
-							<label className="state">State:</label>
+							<label className="state">State: </label>
 							<input type="text" name="state" onChange={this._handleChange} required/>
 						</div>
 						<div className="cust-zip">
-							<label className="zipcode">Zipcode:</label>
+							<label className="zipcode">Zipcode: </label>
 							<input type="text" name="zipcode" onChange={this._handleChange} required/>
 						</div>
 						<div className="confirm-order">

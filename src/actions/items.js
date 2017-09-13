@@ -43,7 +43,7 @@ export function getOne(productId) {
 			else {
 				dispatch({
 					type: "ITEM_ERROR",
-					error: "Can not find that product!",
+					error: "Cannot find that product!",
 				});
 			}
 		})

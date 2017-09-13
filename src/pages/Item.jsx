@@ -38,7 +38,7 @@ class Item extends Component {
 					</div>
 					<div className = "text">
 				 		<p className = "description">{item.description}</p>
-				 			<h1>{item.price}</h1>
+				 			<h1>$ {item.price}</h1>
 							<button className="price"
 										value={item.price}
 										onClick={this._handleClick}>BUY ME</button>
