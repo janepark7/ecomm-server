@@ -13,12 +13,12 @@ export function submitOrder(order) {
 		console.log(itemIds);
 		API.post("/orders", {
 			args: {
-				firstname: order.name,
+				name: order.name,
 				address: order.address,
 				city: order.city,
 				state: order.state,
 				zipcode: order.zipcode,
-				items: itemIds,
+				products: itemIds,
 			},
 		})
 			.then((res) => {
