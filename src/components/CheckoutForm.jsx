@@ -1,4 +1,4 @@
-import "./checkoutForm.scss";
+import "./CheckoutForm.scss";
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { submitOrder } from "actions/checkout";
