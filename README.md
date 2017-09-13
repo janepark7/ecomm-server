@@ -12,7 +12,7 @@ Front end eCommerce project using React and Redux. User will be able to pick and
 
 * [Busted Tees] (http://www.bustedtees.com) - funny t-shirt website
 
-# NYCDA eCommerce Server
+# Wikipedia
 
 Read the [Wiki](https://github.com/wbobeirne/nycda-ecommerce-server/wiki) for
 more information. Replace this README!
