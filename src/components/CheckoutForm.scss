@@ -1,0 +1,29 @@
+
+.cust-form {
+	padding-top: 20px;
+}
+
+label {
+	padding-top: 5px;
+	padding-right: 10px;
+	display: inline-block;
+	width: 45%;
+	text-align: right;
+	// padding-left: 20px;
+}
+
+input {
+	width: 25%;
+	height: 20%;
+}
+
+button {
+	padding: 20px 20px 20px 20px;
+	margin-top: 25px;
+	margin-left: 40%
+}
+
+.checkout-message {
+	color: #DC143C;
+	font-weight: bold;
+}

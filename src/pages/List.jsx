@@ -15,23 +15,19 @@ class List extends Component {
 		return (
 			<div className="Items">
 				<h1>Watch This</h1>
-				<div className="Item-List">
 					{items.map((item, index) => {
 						return (
-							<p>
-								<div className="Watch-type">
-									<Link key={item.id}
-										to= {`/item/${item.id}`}>
-										<h3>{item.name}</h3>
-										<img className="Watch-img"
-											src={item.image.small}/>
-									</Link>
+							<div className="Watch-type">
+								<Link class="watch-title" key={item.id}
+									to= {`/item/${item.id}`}>
+									{item.name}
+									<img className="img-list"
+										src={item.image.small}/>
+										</Link>
 								</div>
-							</p>
 						);
 					})}
 				</div>
-			</div>
 		);
 	}
 }

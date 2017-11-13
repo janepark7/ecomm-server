@@ -1,16 +1,17 @@
 // CSS Reset
 @import "~reset-css/reset.css";
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond');
 
 // Box sizing
-*, *:before, *:after {
-	box-sizing: inherit;
-}
+// *, *:before, *:after {
+// 	box-sizing: inherit;
+// }
 body {
 	box-sizing: border-box;
 	margin: 0 auto;
 	font-family: 'Josefin Sans', sans-serif;
-	max-width: 50em;
+	max-width: 55em;
+	background-color: #FEEED4;
 }
 
 h1 {

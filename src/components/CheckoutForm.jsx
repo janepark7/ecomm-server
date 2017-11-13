@@ -51,8 +51,8 @@ class CheckoutForm extends Component {
 
     	return (
     	<div className="checkout-form">
-				<div className="cust-form">
 					<h1>Checkout Time</h1>
+						<div className="cust-form">
 					<form onSubmit={this._handleSubmit}>
 						<div className="cust-name">
 							<label className="name">Full Name: </label>
@@ -76,7 +76,7 @@ class CheckoutForm extends Component {
 						</div>
 						<div className="confirm-order">
 						<button type="submit" onSubmit={this._handleSubmit}>
-						CONFIRM YOUR ORDER</button>
+							CONFIRM YOUR ORDER</button>
 						</div>
 						<div className="checkout-message">
 					  { message }
